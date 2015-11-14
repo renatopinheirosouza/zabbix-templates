@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2015-11-14T23:41:27Z</date>
+    <date>2015-11-14T23:57:00Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -144,7 +144,7 @@
                     <snmp_community>public</snmp_community>
                     <snmp_oid>1.3.6.1.2.1.2.2.1.2</snmp_oid>
                     <key>ifDescr</key>
-                    <delay>30</delay>
+                    <delay>21600</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -565,7 +565,7 @@
                     <trigger_prototypes/>
                     <graph_prototypes>
                         <graph_prototype>
-                            <name>$1 In/Out Traffic</name>
+                            <name>{#SNMPVALUE} In/Out Traffic</name>
                             <width>900</width>
                             <height>200</height>
                             <yaxismin>0.0000</yaxismin>
