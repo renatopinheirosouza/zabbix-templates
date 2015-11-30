@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2015-11-14T23:57:00Z</date>
+    <date>2015-11-30T16:49:22Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -144,7 +144,7 @@
                     <snmp_community>public</snmp_community>
                     <snmp_oid>1.3.6.1.2.1.2.2.1.2</snmp_oid>
                     <key>ifDescr</key>
-                    <delay>21600</delay>
+                    <delay>30</delay>
                     <status>0</status>
                     <allowed_hosts/>
                     <snmpv3_contextname/>
@@ -562,7 +562,17 @@
                             <logtimefmt/>
                         </item_prototype>
                     </item_prototypes>
-                    <trigger_prototypes/>
+                    <trigger_prototypes>
+                        <trigger_prototype>
+                            <expression>{Template SNMP Cisco Switch:ifOperStatus.[{#SNMPVALUE}].last()}&lt;&gt;1</expression>
+                            <name>{#SNMPVALUE} Operational Status</name>
+                            <url/>
+                            <status>1</status>
+                            <priority>5</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                    </trigger_prototypes>
                     <graph_prototypes>
                         <graph_prototype>
                             <name>{#SNMPVALUE} In/Out Traffic</name>
@@ -585,7 +595,7 @@
                                 <graph_item>
                                     <sortorder>0</sortorder>
                                     <drawtype>0</drawtype>
-                                    <color>00C800</color>
+                                    <color>C80000</color>
                                     <yaxisside>0</yaxisside>
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
@@ -597,13 +607,13 @@
                                 <graph_item>
                                     <sortorder>1</sortorder>
                                     <drawtype>0</drawtype>
-                                    <color>C80000</color>
+                                    <color>0000C8</color>
                                     <yaxisside>0</yaxisside>
                                     <calc_fnc>2</calc_fnc>
                                     <type>0</type>
                                     <item>
                                         <host>Template SNMP Cisco Switch</host>
-                                        <key>ifOutDiscards.[{#SNMPVALUE}]</key>
+                                        <key>ifOutOctets.[{#SNMPVALUE}]</key>
                                     </item>
                                 </graph_item>
                             </graph_items>
