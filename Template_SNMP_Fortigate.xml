@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <zabbix_export>
     <version>2.0</version>
-    <date>2016-05-13T11:57:27Z</date>
+    <date>2016-09-09T11:41:05Z</date>
     <groups>
         <group>
             <name>Templates</name>
@@ -612,7 +612,16 @@
                             <type>0</type>
                         </trigger_prototype>
                         <trigger_prototype>
-                            <expression>{Template SNMP Fortigate:ifInOctets.[{#SNMPVALUE}].last(1)}&lt;300 and {Template SNMP Fortigate:ifOutOctets.[{#SNMPVALUE}].last(1)}&lt;300</expression>
+                            <expression>{Template SNMP Fortigate:ifInOctets.[{#SNMPVALUE}].last(5)}&lt;1000 or {Template SNMP Fortigate:ifOutOctets.[{#SNMPVALUE}].last(5)}&lt;1000</expression>
+                            <name>Problems on {#SNMPVALUE} @ {HOST.NAME}</name>
+                            <url/>
+                            <status>1</status>
+                            <priority>4</priority>
+                            <description/>
+                            <type>0</type>
+                        </trigger_prototype>
+                        <trigger_prototype>
+                            <expression>{Template SNMP Fortigate:ifInOctets.[{#SNMPVALUE}].last(1)}&lt;300 or {Template SNMP Fortigate:ifOutOctets.[{#SNMPVALUE}].last(1)}&lt;300</expression>
                             <name>Problems on {#SNMPVALUE} @ {HOST.NAME}</name>
                             <url/>
                             <status>1</status>
